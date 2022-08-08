@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ColorChanger from "./Components/ColorChanger"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+export default function App() {
+
+    const myStyle = {
+        height: "800px",
+        backgroundColor: `rgb(${180}, ${180}, 255)`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed"
+    }
+
+
+    return (
+        <div>
+            <div style={myStyle} className="background-img">
+                <ColorChanger />
+            </div>
+        </div>
+    )
 }
-
-export default App;
