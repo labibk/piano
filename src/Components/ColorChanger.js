@@ -1,8 +1,10 @@
 import React from "react";
 
-export default function colorChanger() {
+export default function colorChanger(props) {
     return (
-        <div></div>
+        <div>
+            <input ref={props.inputRef} onKeyDown={props.changeColor} className="inputColor"></input>
+        </div>
     )
 }
 
