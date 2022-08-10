@@ -5,12 +5,14 @@ import ChordButton from "./Components/ChordButton";
 import { useState, useRef, useEffect } from "react";
 export const audioContext = React.createContext();
 export const chordContext = React.createContext();
+export const indexContext = React.createContext();
 
 export default function App() {
     //States
     const [color, setColor] = useState(84)
     const [message, setMessage] = useState("")
     const [chord, setChord] = useState("first")
+    const [index, setIndex] = useState(0)
 
 
     //References
@@ -23,8 +25,10 @@ export default function App() {
 
     function changeColor() {
         const randomNumColour = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+        const randomNumIndex = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
         setColor(prevState => 84)
         setColor(prevState => prevState + randomNumColour)
+        setIndex(prevState => randomNumIndex)
         setMessage(prevState => "")
         audioRef.current.play()
     }
@@ -64,11 +68,14 @@ export default function App() {
             <div style={myStyle} className="background-img">
                 <StartButton focus={focus} message={message} />
 
-                <chordContext.Provider value={chord}>
-                    <audioContext.Provider value={audioRef}>
-                        <ColorChanger inputRef={inputRef} changeColor={changeColor} stopMusic={stopMusic} />
-                    </audioContext.Provider>
-                </chordContext.Provider>
+                <indexContext.Provider value={index}>
+                    <chordContext.Provider value={chord}>
+                        <audioContext.Provider value={audioRef}>
+                            <ColorChanger inputRef={inputRef} changeColor={changeColor} stopMusic={stopMusic} />
+                        </audioContext.Provider>
+                    </chordContext.Provider>
+                </indexContext.Provider>
+                
 
 
                 <div>
