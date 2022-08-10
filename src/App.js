@@ -2,15 +2,17 @@ import React from "react";
 import ColorChanger from "./Components/ColorChanger"
 import StartButton from "./Components/StartButton";
 import { useState, useRef, useEffect } from "react";
+export const audioContext = React.createContext();
 
 export default function App() {
     //States
     const [color, setColor] = useState(84)
     const [message, setMessage] = useState("")
-    
+
 
     //References
     const inputRef = useRef()
+    const audioRef = useRef()
 
     useEffect(() => {
         setMessage(prevState => "START!")
@@ -21,6 +23,11 @@ export default function App() {
         setColor(prevState => 84)
         setColor(prevState => prevState + randomNumColour)
         setMessage(prevState => "")
+        audioRef.current.play()
+    }
+
+    function stopMusic() {
+        audioRef.current.pause()
     }
 
     function focus() {
@@ -40,7 +47,10 @@ export default function App() {
         <div>
             <div style={myStyle} className="background-img">
                 <StartButton focus={focus} message={message} />
-                <ColorChanger inputRef={inputRef} changeColor={changeColor}/>
+                <audioContext.Provider value={audioRef}>
+                    <ColorChanger inputRef={inputRef} changeColor={changeColor} stopMusic={stopMusic} />
+                </audioContext.Provider>
+
             </div>
         </div>
     )
