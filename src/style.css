@@ -1,49 +1,54 @@
-*{
+* {
     margin: 0%;
 }
 
 
 
 
-.startButton{
+.startButton {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 20px;
-    
+
 }
 
-.inputColor{
+.inputColor {
     opacity: 0;
     width: 0;
     overflow: hidden;
 }
 
-.inputMusic{
+.inputMusic {
     opacity: 0;
     width: 0;
     overflow: hidden;
 }
 
-.chordButton{
+.chordButton {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    
+
+
 }
 
-.backgroundImg{
+.backgroundImg {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column-reverse;
-    height: 889px;
+
 }
 
-.synthwave{
+.synthwave {
     height: 900px;
 }
 
 
+.chord-button {
+    position: absolute;
+    bottom: 0%;
+}

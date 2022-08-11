@@ -2,6 +2,7 @@ import React from "react";
 import ColorChanger from "./Components/ColorChanger"
 import StartButton from "./Components/StartButton";
 import ChordButton from "./Components/ChordButton";
+import Cards from "./Components/Cards";
 import { useState, useRef, useEffect } from "react";
 export const audioContext = React.createContext();
 export const chordContext = React.createContext();
@@ -75,12 +76,10 @@ export default function App() {
                         </audioContext.Provider>
                     </chordContext.Provider>
                 </indexContext.Provider>
+                <Cards></Cards>
                 
+                <ChordButton className="chord-button" changeChord={changeChord} chord={chord} />
 
-
-                <div>
-                    <ChordButton changeChord={changeChord} chord={chord} />
-                </div>
 
             </div>
         </div>
