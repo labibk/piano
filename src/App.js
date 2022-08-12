@@ -56,8 +56,13 @@ export default function App() {
     }
 
     const myStyle = {
-        height: "800px",
-        backgroundColor: `rgb(${color}, ${color}, 255)`,
+        position: "absolute",
+        top: "0px",
+        right: "0px",
+        bottom: "0px",
+        left: "0px",
+        // backgroundColor: `rgb(${color}, ${color}, 255)`,
+        backgroundImage: `linear-gradient(rgb(${color}, ${color}, 255), red)`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundAttachment: "fixed"
@@ -67,6 +72,13 @@ export default function App() {
     return (
         <div>
             <div style={myStyle} className="background-img">
+                <div className="nav">
+                    <h1>onlinePiano</h1>
+                    <h3>Welcom to the onlinePiano,here you can generate random piano melodies on a press of a key</h3>
+                    <h3>Press the start button to get started</h3>
+
+                </div>
+
                 <StartButton focus={focus} message={message} />
 
                 <indexContext.Provider value={index}>
@@ -76,8 +88,11 @@ export default function App() {
                         </audioContext.Provider>
                     </chordContext.Provider>
                 </indexContext.Provider>
-                <Cards></Cards>
-                
+                <div className="cards">
+                    <Cards chord={chord} />
+                </div>
+
+
                 <ChordButton className="chord-button" changeChord={changeChord} chord={chord} />
 
 

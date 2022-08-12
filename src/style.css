@@ -43,12 +43,27 @@
 
 }
 
-.synthwave {
-    height: 900px;
-}
-
-
 .chord-button {
     position: absolute;
     bottom: 0%;
+}
+
+.cards{
+    background-color: aliceblue;
+    width: 50%;
+}
+
+.nav{
+    margin: 2%;
+    padding-bottom: 2%;
+    
+}
+
+.cards{
+    margin: 2%;
+    padding-bottom: 2%;
+}
+
+.chord-info{
+    margin: 2%;
 }
