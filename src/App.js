@@ -14,6 +14,9 @@ export default function App() {
     const [message, setMessage] = useState("")
     const [chord, setChord] = useState("first")
     const [index, setIndex] = useState(0)
+    console.log(`The current index is ${index}`)
+
+
 
 
     //References
@@ -25,16 +28,20 @@ export default function App() {
     }, [])
 
     function changeColor() {
-        const randomNumColour = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-        const randomNumIndex = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-        setColor(prevState => 84)
-        setColor(prevState => prevState + randomNumColour)
-        setIndex(prevState => randomNumIndex)
-        setMessage(prevState => "")
+        const randomNumColour = Math.floor(Math.random() * (184 - 84 + 1)) + 84;
+        // console.log(`The random num is ${randomNumIndex}`)
+        setColor(randomNumColour)
+        setMessage(prevState => "Enjoy!")
         audioRef.current.play()
+
     }
 
+
+
+
     function stopMusic() {
+        const randomNumIndex = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+        setIndex(randomNumIndex)
         audioRef.current.pause()
     }
 
@@ -74,7 +81,7 @@ export default function App() {
             <div style={myStyle} className="background-img">
                 <div className="nav">
                     <h1>onlinePiano</h1>
-                    <h3>Welcom to the onlinePiano,here you can generate random piano melodies on a press of a key</h3>
+                    <h3>Welcom to the onlinePiano, here you can generate random piano melodies by pressing the keys</h3>
                     <h3>Press the start button to get started</h3>
 
                 </div>
