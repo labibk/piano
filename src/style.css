@@ -48,22 +48,30 @@
     bottom: 0%;
 }
 
-.cards{
+.cards {
+    color: aliceblue;
+    width: 30%;
+    margin: 2%;
+    padding-bottom: 2%;
+    transition: width 4s, height 4s, background-color 2s ease-out, color 4s ease-out;
+
+}
+
+.nav {
+    margin: 2%;
+    padding-bottom: 2%;
+
+}
+
+
+
+.chord-info {
+    margin: 2%;
+}
+
+.cards:hover {
+    color: rgb(84, 125, 255);
     background-color: aliceblue;
-    width: 50%;
-}
+    width: 100%;
 
-.nav{
-    margin: 2%;
-    padding-bottom: 2%;
-    
-}
-
-.cards{
-    margin: 2%;
-    padding-bottom: 2%;
-}
-
-.chord-info{
-    margin: 2%;
 }

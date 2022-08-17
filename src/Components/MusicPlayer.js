@@ -14,7 +14,7 @@ export default function MusicPlayer() {
     return (
         <div>
             <audio ref={audio} src={songList[chordIndex][noteIndex]}></audio>
-            <h2>The note index is {noteIndex}</h2>
+
         </div>
     )
 }

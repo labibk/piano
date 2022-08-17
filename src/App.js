@@ -29,7 +29,6 @@ export default function App() {
 
     function changeColor() {
         const randomNumColour = Math.floor(Math.random() * (184 - 84 + 1)) + 84;
-        // console.log(`The random num is ${randomNumIndex}`)
         setColor(randomNumColour)
         setMessage(prevState => "Enjoy!")
         audioRef.current.play()
