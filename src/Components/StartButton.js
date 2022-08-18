@@ -2,8 +2,8 @@ import React from "react";
 
 export default function StartButton(props){
     return(
-        <div>
-            <div className="startButton" onClick={props.focus}>{props.message}</div>
+        <div onClick={props.focus}>
+            <div className="startButton">{props.message}</div>
         </div>
     )
 }

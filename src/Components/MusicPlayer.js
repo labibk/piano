@@ -13,8 +13,8 @@ export default function MusicPlayer() {
 
     return (
         <div>
-            <audio ref={audio} src={songList[chordIndex][noteIndex]}></audio>
-
+            <audio ref={audio} src={songList[chordIndex][noteIndex]} preload={songList[chordIndex][noteIndex]}></audio>
+            
         </div>
     )
 }

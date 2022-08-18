@@ -14,7 +14,7 @@ export default function Cards(props) {
             </div>
 
             <div className="chord-info">
-                <span>{info[props.chord][2]}</span>
+                <span>{info[props.chord][4]}</span>
                 <span> , More info</span>
             </div>
 

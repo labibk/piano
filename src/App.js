@@ -12,7 +12,7 @@ export default function App() {
     //States
     const [color, setColor] = useState(84)
     const [message, setMessage] = useState("")
-    const [chord, setChord] = useState("first")
+    const [chord, setChord] = useState("Minor Blues")
     const [index, setIndex] = useState(0)
     console.log(`The current index is ${index}`)
 
@@ -28,10 +28,11 @@ export default function App() {
     }, [])
 
     function changeColor() {
+        audioRef.current.play()
         const randomNumColour = Math.floor(Math.random() * (184 - 84 + 1)) + 84;
         setColor(randomNumColour)
         setMessage(prevState => "Enjoy!")
-        audioRef.current.play()
+        
 
     }
 
@@ -39,25 +40,26 @@ export default function App() {
 
 
     function stopMusic() {
-        const randomNumIndex = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+        audioRef.current.load()
+        const randomNumIndex = Math.floor(Math.random() * (7 - 0 + 1)) + 0;
         setIndex(randomNumIndex)
-        audioRef.current.pause()
     }
 
     function focus() {
         inputRef.current.focus()
+        setMessage("Enjoy!")
     } //Focus for the color changing mechanism
 
     function changeChord() {
-        if (chord === "first") {
-            setChord(prevState => "second")
-            setMessage(prevState => "Start Again")
-        } else if (chord === "second") {
-            setChord(prevState => "third")
-            setMessage(prevState => "Start Again")
+        if (chord === "Minor Blues") {
+            setChord(prevState => "Harmonic Minor")
+            setMessage(prevState => "START!")
+        } else if (chord === "Harmonic Minor") {
+            setChord(prevState => "Major Blues")
+            setMessage(prevState => "START!")
         } else {
-            setChord(prevState => "first")
-            setMessage(prevState => "Start Again")
+            setChord(prevState => "Minor Blues")
+            setMessage(prevState => "START!")
         }
     }
 
@@ -79,9 +81,9 @@ export default function App() {
         <div>
             <div style={myStyle} className="background-img">
                 <div className="nav">
-                    <h1>onlinePiano</h1>
-                    <h3>Welcom to the onlinePiano, here you can generate random piano melodies by pressing the keys</h3>
-                    <h3>Press the start button to get started</h3>
+                    <div className="nav-heading-1">
+                        <h1 >onlinePiano</h1>
+                    </div>
 
                 </div>
 

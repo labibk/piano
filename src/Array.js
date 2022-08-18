@@ -1,15 +1,19 @@
-import song_2 from "./Music/song_2.mp3" //${} <-- Can I do this in import
-import song_3 from "./Music/song_3.mp3"
-import song_1 from "./Music/song_1.mp3"
-import song_4 from "./Music/song_4.mp3"
-import song_5 from "./Music/song_5.mp3"
-import song_6 from "./Music/song_6.mp3"
+import C from "./Music/C.mp3"
+import E from "./Music/E.mp3"
+import G from "./Music/G.mp3"
+import Bb from "./Music/Bb.mp3"
+import C2 from "./Music/C2.mp3"
+import E2 from "./Music/E2.mp3"
+import G2 from "./Music/G2.mp3"
+import Bb2 from "./Music/Bb2.mp3"
+
+
 
 const Array = {
 
-    "first":[song_2, song_3, "This is the e major chord"],
-    "second":[song_1, song_4, "This is the a minor chord"],
-    "third":[song_5,song_6, "This is something else"] 
+    "Minor Blues": [C, E, G, Bb, "This is the e major chord"],
+    "Harmonic Minor": [C, E, G, Bb, "This is the a minor chord"],
+    "Major Blues": [C, E, G, Bb, C2, E2, G2, Bb2, "This is something else"]
 }
 
 export default Array
