@@ -12,7 +12,7 @@ export default function App() {
     //States
     const [color, setColor] = useState(84)
     const [message, setMessage] = useState("")
-    const [chord, setChord] = useState("Minor Blues")
+    const [chord, setChord] = useState("A Minor - D minor - E Minor")
     const [index, setIndex] = useState(0)
     console.log(`The current index is ${index}`)
 
@@ -28,6 +28,7 @@ export default function App() {
     }, [])
 
     function changeColor() {
+        audioRef.current.load()
         audioRef.current.play()
         const randomNumColour = Math.floor(Math.random() * (184 - 84 + 1)) + 84;
         setColor(randomNumColour)
@@ -41,7 +42,7 @@ export default function App() {
 
     function stopMusic() {
         audioRef.current.load()
-        const randomNumIndex = Math.floor(Math.random() * (7 - 0 + 1)) + 0;
+        const randomNumIndex = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
         setIndex(randomNumIndex)
     }
 
@@ -51,14 +52,14 @@ export default function App() {
     } //Focus for the color changing mechanism
 
     function changeChord() {
-        if (chord === "Minor Blues") {
-            setChord(prevState => "Harmonic Minor")
+        if (chord === "A Minor - D minor - E Minor") {
+            setChord(prevState => "A Minor - B Diminished - C Major")
             setMessage(prevState => "START!")
-        } else if (chord === "Harmonic Minor") {
-            setChord(prevState => "Major Blues")
+        } else if (chord === "A Minor - B Diminished - C Major") {
+            setChord(prevState => "C Major - F Major - G Major")
             setMessage(prevState => "START!")
         } else {
-            setChord(prevState => "Minor Blues")
+            setChord(prevState => "A Minor - D minor - E Minor")
             setMessage(prevState => "START!")
         }
     }

@@ -1,9 +1,9 @@
 import React from "react";
-import Array from "../Array";
+// import Array from "../Array";
 
 export default function Cards(props) {
 
-    const info = Array
+    // const info = Array
 
     return (
         <div>
@@ -12,12 +12,6 @@ export default function Cards(props) {
                 <h1 className="chord-info">{props.chord}</h1>
 
             </div>
-
-            <div className="chord-info">
-                <span>{info[props.chord][4]}</span>
-                <span> , More info</span>
-            </div>
-
         </div>
     )
 }
