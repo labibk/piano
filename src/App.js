@@ -14,6 +14,7 @@ export default function App() {
     const [message, setMessage] = useState("")
     const [chord, setChord] = useState("A Minor - D minor - E Minor")
     const [index, setIndex] = useState(0)
+    const [errorMsg, setErrorMsg] = useState()
     console.log(`The current index is ${index}`)
 
 
@@ -24,16 +25,26 @@ export default function App() {
     const audioRef = useRef()
 
     useEffect(() => {
-        setMessage(prevState => "START!")
+        setMessage(prevState => "Click anywhere in screen or this button to start")
     }, [])
 
     function changeColor() {
         audioRef.current.load()
-        audioRef.current.play()
+        var playPromise = audioRef.current.play();
+
+        if (playPromise !== undefined) {
+            setErrorMsg("")
+            playPromise.then(_ => {
+            })
+                .catch(error => {
+                    setErrorMsg("Yikes! Please play one key at a time.")
+                });
+        }
         const randomNumColour = Math.floor(Math.random() * (184 - 84 + 1)) + 84;
         setColor(randomNumColour)
         setMessage(prevState => "Enjoy!")
-        
+
+
 
     }
 
@@ -79,7 +90,7 @@ export default function App() {
 
 
     return (
-        <div>
+        <div onClick={focus}>
             <div style={myStyle} className="background-img">
                 <div className="nav">
                     <div className="nav-heading-1">
@@ -102,7 +113,7 @@ export default function App() {
                 </div>
 
 
-                <ChordButton className="chord-button" changeChord={changeChord} chord={chord} />
+                <ChordButton className="chord-button-component" changeChord={changeChord} chord={chord} errorMsg={errorMsg} />
 
 
             </div>

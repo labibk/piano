@@ -8,7 +8,7 @@ export default function Cards(props) {
     return (
         <div>
             <div>
-
+                <h1>Chord Information</h1>
                 <h1 className="chord-info">{props.chord}</h1>
 
             </div>

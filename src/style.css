@@ -6,14 +6,13 @@
 
 
 
-.startButton {
+.start-button {
     color: aliceblue;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 20px;
     transition: padding-top 1s ease-out, width 1s ease-out, background-color 0.5s ease-out, color 1s ease-out;
-    width: 10%;
     margin: 3%;
     padding: 2%;
     border-radius: 10px;
@@ -21,7 +20,7 @@
 
 }
 
-.startButton:hover {
+.start-button:hover {
     background-color: aliceblue;
     color: red;
     display: flex;
@@ -32,19 +31,13 @@
 
 }
 
-.inputColor {
+.input-color {
     opacity: 0;
     width: 0;
     overflow: hidden;
 }
 
-.inputMusic {
-    opacity: 0;
-    width: 0;
-    overflow: hidden;
-}
-
-.chordButton {
+.chord-button {
     color: aliceblue;
     display: flex;
     align-items: center;
@@ -56,19 +49,13 @@
 
 }
 
-.chordButton:hover{
+.chord-button:hover{
     font-size: 140%;
 }
 
-.backgroundImg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column-reverse;
 
-}
 
-.chord-button {
+.chord-button-component {
     position: absolute;
     bottom: 0%;
 }
@@ -101,21 +88,22 @@
     margin: 2%;
 }
 
-.nav-heading-2 {
-    color: aliceblue;
-}
-
-
-
-
 .chord-info {
     margin: 2%;
+    color: transparent;
+    transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.cards:hover {
+.cards:hover  {
     /* color: rgb(84, 125, 255); */
     color: red;
     background-color: aliceblue;
     width: 90%;
 
+
 }
+
+.cards:hover .chord-info {
+    color: red;
+}
+
