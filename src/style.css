@@ -3,21 +3,50 @@
     font-family: 'Rubik', sans-serif
 }
 
+/* makes the input element invisible */
+.input-color {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+
+/* the styles and transition for the nav element */
+.nav {
+    margin: 0%;
+
+}
 
 
 
+.nav-heading-1 {
+    background-color: aliceblue;
+    color: red;
+    padding: 2%;
+    border-radius: 10px;
+    margin: 3%;
+    transition: margin 1s ease-out;
+}
+
+.nav-heading-1:hover {
+    margin: 2%;
+}
+
+
+/* the styles and transition for the start button element */
 .start-button {
     color: aliceblue;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
+    flex-direction: column;
+    /* padding-top: 5px; */
     transition: padding-top 1s ease-out, width 1s ease-out, background-color 0.5s ease-out, color 1s ease-out;
     margin: 3%;
-    padding: 2%;
+    /* padding: 2%; */
     border-radius: 10px;
     
-
+    
 }
 
 .start-button:hover {
@@ -27,16 +56,48 @@
     align-items: center;
     justify-content: center;
     padding-top: 30px;
-    width: 90%;
+    
 
 }
 
-.input-color {
-    opacity: 0;
-    width: 0;
-    overflow: hidden;
+.start-button:hover .chord-info{
+    color: red;
 }
 
+
+/* the styles and transition for the cards element */
+.cards {
+    color: aliceblue;
+    border-radius: 10px;
+    margin: 3%;
+    /* width: 30%; */
+    padding: 2%;
+    transition: height 1s, background-color 0.5s ease-out, color 1s ease-out;
+
+
+}
+
+.cards-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards:hover  {
+    /* color: rgb(84, 125, 255); */
+    color: red;
+    background-color: aliceblue;
+    /* width: 90%; */
+
+
+}
+
+.cards:hover .chord-info {
+    color: red;
+}
+
+
+/* the styles and transition for the chord button element */
 .chord-button {
     color: aliceblue;
     display: flex;
@@ -60,50 +121,20 @@
     bottom: 0%;
 }
 
-.cards {
-    color: aliceblue;
-    border-radius: 10px;
-    margin: 3%;
-    width: 30%;
-    padding: 2%;
-    transition: width 1s, height 1s, background-color 0.5s ease-out, color 1s ease-out;
-
-
-}
-
-.nav {
-    margin: 0%;
-
-}
-
-.nav-heading-1 {
-    background-color: aliceblue;
-    padding: 2%;
-    border-radius: 10px;
-    margin: 3%;
-    transition: margin 1s ease-out;
-}
-
-.nav-heading-1:hover {
-    margin: 2%;
-}
-
 .chord-info {
     margin: 2%;
     color: transparent;
     transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.cards:hover  {
-    /* color: rgb(84, 125, 255); */
-    color: red;
-    background-color: aliceblue;
-    width: 90%;
 
 
-}
 
-.cards:hover .chord-info {
-    color: red;
-}
+
+
+
+
+
+
+
 

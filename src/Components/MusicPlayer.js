@@ -9,11 +9,10 @@ export default function MusicPlayer() {
     const chordIndex = useContext(chordContext)
     const noteIndex = useContext(indexContext)
 
-    // const randomNumIndex = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-
     return (
         <div>
-            <audio ref={audio} src={songList[chordIndex][noteIndex]} preload={songList[chordIndex][noteIndex]}></audio>
+            <audio data-testid="music-player-element" ref={audio} src={songList[chordIndex][noteIndex]} ></audio>
+            
             
         </div>
     )

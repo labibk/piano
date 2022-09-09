@@ -4,7 +4,7 @@ import MusicPlayer from "./MusicPlayer";
 export default function colorChanger(props) {
     return (
         <div>
-            <input ref={props.inputRef} onKeyPress={props.changeColor} onKeyUp={props.stopMusic} className="input-color"></input>
+            <input data-testid="input-element" ref={props.inputRef} onChange={props.changeColor} onKeyUp={props.stopMusic} className="input-color" placeholder="For Test"></input>
             <MusicPlayer />
         </div>
     )

@@ -17,12 +17,12 @@ import G2 from "./Music/G2.mp3"
 
 
 
-
+// the music player accesses random files from this array
 const Array = {
 
-    "A Minor - D minor - E Minor": [A, A2, B, C, D, D2, E, E2, F, G],
-    "A Minor - B Diminished - C Major": [A, A2, B, C, D, E, F, G, C2, B2],
-    "C Major - F Major - G Major": [A, B, C, D, E, F, G, C2, F2, G2]
+    "A Minor - D minor - E Minor": [A, A2, B, C, D, D2, E, E2, F, G, "This is a I-IV-V-I Chord progression, sad mood"],
+    "A Minor - B Diminished - C Major": [A, A2, B, C, D, E, F, G, C2, B2, "This is a I-II-III chord progression, desolate mood"],
+    "C Major - F Major - G Major": [A, B, C, D, E, F, G, C2, F2, G2, "This is a I-IV-V (Mjaor key) chord progression, uplifting mood"]
 }
 
 export default Array
